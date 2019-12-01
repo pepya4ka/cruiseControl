@@ -23,9 +23,11 @@ public class Info extends Base {
         setupBase(this.posMul, this.infoScreen);
         setupPanel();
         components.put(InfoComponents.SPEED.toString(), setupSpeedComponent());
-        components.put(InfoComponents.LIMIT.toString(), setupLimitComponent());
+        //components.put(InfoComponents.LIMIT.toString(), setupLimitComponent());
         components.put(InfoComponents.DISTANCE.toString(), setupTrafficLightComponent());
         components.put(InfoComponents.AMOUNT_OF_FUEL.toString(), amountOfFuel());
+        components.put(InfoComponents.COST.toString(), cost());
+
 
         infoScreen.setVisible(true);
         return components;
@@ -44,12 +46,14 @@ public class Info extends Base {
     }
 
     private JTextArea setupSpeedComponent(){
-        JLabel label = new JLabel("Current speed: ");
+        JLabel label = new JLabel("Скорость: ");
         label.setFont(font);
         JTextArea text = new JTextArea();
         label.setLabelFor(text);
         text.setFont(font);
         text.setText("0");
+        label.setOpaque(true);
+        label.setBackground(Color.PINK);
         infoPanel.add(label);
         infoPanel.add(text);
         return text;
@@ -67,22 +71,39 @@ public class Info extends Base {
     }
 
     private JTextArea setupTrafficLightComponent() {
-        JLabel label = new JLabel("Distance:  ");
+        JLabel label = new JLabel("Расстояние: ");
         label.setFont(font);
         JTextArea text = new JTextArea("None");
         text.setFont(font);
         label.setLabelFor(text);
+        label.setOpaque(true);
+        label.setBackground(Color.PINK);
         infoPanel.add(label);
         infoPanel.add(text);
         return text;
     }
 
     private JTextArea amountOfFuel() {
-        JLabel label = new JLabel("Amount of fuel");
+        JLabel label = new JLabel("Кол-во топлива: ");
         label.setFont(font);
         JTextArea text = new JTextArea("None");
         text.setFont(font);
         label.setLabelFor(text);
+        label.setOpaque(true);
+        label.setBackground(Color.PINK);
+        infoPanel.add(label);
+        infoPanel.add(text);
+        return text;
+    }
+
+    private JTextArea cost() {
+        JLabel label = new JLabel("Затраты:");
+        label.setFont(font);
+        JTextArea text = new JTextArea("None");
+        text.setFont(font);
+        label.setLabelFor(text);
+        label.setOpaque(true);
+        label.setBackground(Color.PINK);
         infoPanel.add(label);
         infoPanel.add(text);
         return text;

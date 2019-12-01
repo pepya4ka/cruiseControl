@@ -41,10 +41,12 @@ public class Manager extends Thread{
         JTextArea speed = (JTextArea) frameManager.getInfoComponents().get(InfoComponents.SPEED.toString());
         JTextArea distance = (JTextArea) frameManager.getInfoComponents().get(InfoComponents.DISTANCE.toString());
         JTextArea amoutnOfFuel = (JTextArea) frameManager.getInfoComponents().get(InfoComponents.AMOUNT_OF_FUEL.toString());
+        JTextArea cost = (JTextArea) frameManager.getInfoComponents().get(InfoComponents.COST.toString());
         while (!car.isParked()) {
             speed.setText(String.format("%.2f", car.getSpeed()) + " км/ч");
             distance.setText(String.format("%.2f", car.getDistance()) + " км");
             amoutnOfFuel.setText(String.format("%.2f", car.getAmountOfFuel()) + " л");
+            cost.setText(String.format("%.2f", car.getCost()) + " р");
         }
     }
     

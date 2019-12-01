@@ -10,6 +10,7 @@ public class Car extends Thread {
     private boolean brake;
     private float distance;
     private float amountOfFuel;
+    private float cost;
 
     public Car() {
         this.speed = 0;
@@ -18,6 +19,7 @@ public class Car extends Thread {
         this.brake = false;
         this.distance = 0;
         this.amountOfFuel = 0;
+        this.cost = 0;
     }
 
     @Override
@@ -29,6 +31,7 @@ public class Car extends Thread {
                 i++;
                 distance += speed;
                 amountOfFuel += amountOfFuel * 0.001;
+                cost = amountOfFuel * 42.46f;
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -40,6 +43,7 @@ public class Car extends Thread {
                 i++;
                 distance += speed;
                 amountOfFuel += distance * .04f;
+                cost = amountOfFuel * 42.46f;
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -51,6 +55,7 @@ public class Car extends Thread {
                 i++;
                 distance += speed;
                 amountOfFuel += distance * .04f;
+                cost = amountOfFuel * 42.46f;
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -59,6 +64,14 @@ public class Car extends Thread {
                 }
             }
         }
+    }
+
+    public float getCost() {
+        return cost;
+    }
+
+    public void setCost(float cost) {
+        this.cost = cost;
     }
 
     public void setCruise(boolean cruise) {

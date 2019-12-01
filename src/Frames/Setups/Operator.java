@@ -42,6 +42,7 @@ public class Operator extends Base {
     private void setupPanel() {
         operatorPanel.setLayout(new GridLayout(2, 2));
         operatorPanel.setName("operator_panel");
+        operatorPanel.setBackground(Color.PINK);
         operatorScreen.setTitle("Operator");
         operatorScreen.add(operatorPanel);
     }
@@ -49,6 +50,7 @@ public class Operator extends Base {
     private JButton setupStartButton() {
         JButton button = new JButton("Start!");
         button.setFont(font);
+        button.setBackground(Color.PINK);
         operatorPanel.add(button);
 
         return button;
@@ -57,6 +59,7 @@ public class Operator extends Base {
     private JButton setupCruiseButton() {
         JButton button = new JButton("Cruise");
         button.setFont(font);
+        button.setBackground(Color.PINK);
         operatorPanel.add(button);
 
         return button;
@@ -65,6 +68,7 @@ public class Operator extends Base {
     private JButton setupSpeedUpButton() {
         JButton button = new JButton("Gas");
         button.setFont(font);
+        button.setBackground(Color.PINK);
         operatorPanel.add(button);
 
         return button;
@@ -73,6 +77,7 @@ public class Operator extends Base {
     private JButton setupSpeedDownButton() {
         JButton button = new JButton("Brake");
         button.setFont(font);
+        button.setBackground(Color.PINK);
         operatorPanel.add(button);
 
         return button;
