@@ -42,6 +42,8 @@ public class Info extends Base {
     private void setupPanel() {
         infoPanel.setLayout(new GridLayout(6, 1));
         infoPanel.setName("info_panel");
+        infoPanel.setOpaque(true);
+        infoPanel.setBackground(Color.PINK);
         infoScreen.add(infoPanel);
     }
 
@@ -52,6 +54,8 @@ public class Info extends Base {
         label.setLabelFor(text);
         text.setFont(font);
         text.setText("0");
+        text.setOpaque(true);
+        text.setBackground(Color.orange);
         label.setOpaque(true);
         label.setBackground(Color.PINK);
         infoPanel.add(label);
@@ -76,6 +80,8 @@ public class Info extends Base {
         JTextArea text = new JTextArea("None");
         text.setFont(font);
         label.setLabelFor(text);
+        text.setOpaque(true);
+        text.setBackground(Color.orange);
         label.setOpaque(true);
         label.setBackground(Color.PINK);
         infoPanel.add(label);
@@ -89,6 +95,8 @@ public class Info extends Base {
         JTextArea text = new JTextArea("None");
         text.setFont(font);
         label.setLabelFor(text);
+        text.setOpaque(true);
+        text.setBackground(Color.orange);
         label.setOpaque(true);
         label.setBackground(Color.PINK);
         infoPanel.add(label);
@@ -102,6 +110,8 @@ public class Info extends Base {
         JTextArea text = new JTextArea("None");
         text.setFont(font);
         label.setLabelFor(text);
+        text.setOpaque(true);
+        text.setBackground(Color.orange);
         label.setOpaque(true);
         label.setBackground(Color.PINK);
         infoPanel.add(label);
