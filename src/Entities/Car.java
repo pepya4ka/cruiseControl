@@ -1,6 +1,7 @@
 package Entities;
 
 import java.lang.Thread;
+import java.util.Random;
 
 public class Car extends Thread {
     private float speed;
@@ -25,8 +26,11 @@ public class Car extends Thread {
     @Override
     public void run() {
         int i = 0;
+        float tempSpeed;
         while (!isParked) {
             while (cruise) {
+                tempSpeed = (((float) randomAmount(10)) - 5.0f) / 10;
+                speed += tempSpeed;
                 currentLimit = speed;
                 i++;
                 distance += speed;
@@ -37,6 +41,7 @@ public class Car extends Thread {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                speed -= tempSpeed;
             }
             while (brake) {
                 speed-=0.01;
@@ -107,5 +112,8 @@ public class Car extends Thread {
     }
     public boolean isBrake() {
         return brake;
+    }
+    public int randomAmount(int amountMoney) {
+        return new Random().nextInt(amountMoney);
     }
 }
